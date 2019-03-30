@@ -1,0 +1,18 @@
+.box1 {
+  width: 10px;
+  height: 10px;
+  background-color: #0f0;
+  
+}
+.box {
+  width: 10px;
+  height: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+.wrapper{
+    width: 30px;
+    height: 30px;
+    padding:10px;
+    background-color: #0f0;
+}

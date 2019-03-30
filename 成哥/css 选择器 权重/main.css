@@ -1,0 +1,14 @@
+#qaq{
+    color:black;
+}
+em{
+    color:red;
+    background-color: black;
+}
+[contenteditable="false"]{
+    color:blue;
+    background-color:pink;
+}
+#boy{
+    color:Green!important;
+}

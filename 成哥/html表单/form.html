@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Form表单</title>
+</head>
+
+<body>
+    <div>
+        <h2>欢迎</h2>
+        <form method="GET" action="">
+            <!--action 接收地址 暂时没接触-->
+            用户名<input type="text" name="username">
+            小秘密<input type="password" name="password">
+            <input type="submit">
+        </form>
+    </div>
+    <div>
+        <form method="GET" action="">
+            <h3>请选择您的性别：</h3>
+            <input type="radio" name="sex" value="male">男
+            <input type="radio" name="sex" value="female">女
+            <input type="radio" name="sex" value="none" checked="checked">大佬
+            <input type="submit">
+        </form>
+    </div>
+    <div>
+        <h3>Where are you from?</h3>
+        <form method="GET" action="">
+            <select name="country">
+                <option>中国</option>
+                <option>US</option>
+                <option>德国</option>
+                <option>法国</option>
+                <option value="none" selected="selected">苏联</option>
+                <!--value在select中可以有 优先级比内容高-->
+            </select>
+            <input type="submit">
+        </form>
+    </div>
+
+</body>
+
+</html>

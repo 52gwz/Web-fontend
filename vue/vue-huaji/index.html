@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>不要锤我</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="face" v-bind:style="faceStyle"></div>
+        <div id="mood">
+            <div v-bind:style="{width:mood + '%'}"></div>
+        </div>
+        <div id="control">
+            <button v-on:click="bitHim()" v-show="!isEnded">小锤50 &lt(*￣▽￣*)/</button>
+            <button v-on:click="restart()">再锤一次 (#^.^#)</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html> 

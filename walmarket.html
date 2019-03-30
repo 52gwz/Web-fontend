@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>沃尔玛 - 计算</title>
+</head>
+
+<body>
+    <textarea id="text-main" placeholder="请填入短信内容"></textarea>
+    <button onclick="getCards()">取出券码</button>
+    <style>
+        #text-main {
+            width: 100%;
+            height: 250px;
+        }
+
+        button {
+            height: 80px;
+            width: 100%;
+        }
+    </style>
+    <script>
+        var ruler = /\d{19}/gm;
+        input = document.getElementById('text-main');
+        function getCards() {
+            text = input.value;
+            result = text.match(ruler);
+            var strResult = "共有" + result.length + "张卡\r\n";
+            
+            for (var i = 0; i < result.length; ++i) {
+                strResult = strResult + result[i] + "\r\n";
+            }
+            console.log(strResult);
+            input.value = strResult;
+            text.select();
+        }
+
+    </script>
+</body>
+
+</html>

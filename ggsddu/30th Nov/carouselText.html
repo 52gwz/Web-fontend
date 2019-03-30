@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>大哥牛逼</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-size: 36px;
+            color: #1b8ef3;
+        }
+
+        .carousel__info__text {
+            float: left;
+        }
+
+        .carousel__info__box {
+            height: 50px;
+            overflow: hidden;
+            line-height: 50px;
+            display: inline-block;
+        }
+
+        #js_carousel_text {
+            float: left;
+            margin-left: 4px;
+        }
+
+        strong {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel_box">
+        <div class="carousel_info">
+            <div>安柏华牛逼</div>
+        </div>
+        <div class="carousel__info__box">
+            <span class="carousel__info__text">我们的口号是？</span>
+            <span id="js_carousel_text">
+                <!--0 -50px -96px -145px -192px-->
+                <strong>马小羊:大哥牛逼!</strong>
+                <strong>高文铮:大哥牛逼!</strong>
+                <strong>陈为岩:大哥牛逼!</strong>
+                <strong>何家乐:大哥牛逼!</strong>
+				<strong>叶玉坤:大哥牛逼!</strong>
+                <strong>马小羊:大哥牛逼!</strong>
+            </span>
+        </div>
+    </div>
+    <Script>
+        var t = document.getElementById('js_carousel_text');
+        var count = 0;
+        setInterval(function () {
+            count -= 50;
+            t.style = "transition:all 1s;transform: translateY(" + count + "px);"
+            if (count == -200) {
+                t.style = "transition:all 1s;transform: translateY(" + count + "px);"
+                setTimeout(() => { t.style = "transform: translateY(-1px);" }, 1000)
+                count = 0;
+            }
+        }, 1500)
+    </Script>
+</body>
+
+</html>

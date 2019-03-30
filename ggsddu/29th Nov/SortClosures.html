@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>排序</title>
+</head>
+
+<body>
+    <h3>冒泡排序</h3>
+    <img src="bubble_sort.gif" alt="冒泡排序">
+    <ul class="bubble_sort">
+        <li>2005</li>
+        <li>55</li>
+        <li>66</li>
+        <li>233</li>
+        <li>0</li>
+        <li>-1</li>
+        <li>44</li>
+        <li>23</li>
+    </ul>
+    <button class="bubble_button">手动排序</button>
+    <button id="arrow_button">sort箭头函数</button>
+    <button id="callback">test callback function</button>
+    <p>Some paragraph text</p>
+    <h1>some heading 1 text</h1>
+    <h2>some heading 2 text</h2>
+    <a href="#" id="size-12">12</a>
+    <a href="#" id="size-14">14</a>
+    <a href="#" id="size-16">16</a>
+    <ul>
+        <li>中国银行：0<button>存款100</button><button>取款100</button></li>
+        <li>建设银行：0<button>存款100</button><button>取款100</button></li>
+        <li>花旗银行：-233<button>存款100</button><button>取款100</button></li>
+    </ul>
+
+    <script>
+        document.getElementsByClassName('bubble_button')[0].onclick = function () {
+            let nbNodes = document.getElementsByClassName('bubble_sort')[0].getElementsByTagName('li');
+            // var nbs = [].slice.call(nbNodes);
+            /******************************************
+                这句话相当于Array.slice.call(nbNodes)
+                目的是将nbNodes对象的数组提出来转化为数组
+                nbNodes本身并不是数组而是对象           
+            *******************************************/
+            // for (let nb in nbs) {
+            //     console.log(nbs[nb].innerText)
+            // }
+            for (let i = 0; i < nbNodes.length; i++) {
+                for (let j = 0; j < nbNodes.length - i - 1; j++) {
+                    if (parseInt(nbNodes[j].innerText) > parseInt(nbNodes[j + 1].innerText)) {  //innerText是Text!
+                        let temp = nbNodes[j].innerText;
+                        nbNodes[j].innerText = nbNodes[j + 1].innerText;
+                        nbNodes[j + 1].innerText = temp;
+                    }
+                    // console.log(nbNodes[j].innerHTML);
+                }
+            }
+        }
+        /******************************************
+                Sort方法内函数返回 大于0 即进行交换          
+        *******************************************/
+        document.getElementById('arrow_button').onclick = () => {
+            var arr = document.getElementsByClassName('bubble_sort')[0].getElementsByTagName('li'), temp = [];
+            for (let i = 0; i < arr.length; i++) {
+                temp.push(parseInt(arr[i].innerText));
+            }
+            temp.sort((a, b) => { return b - a });
+            console.log(temp);
+            for (let i = 0; i < arr.length; i++) {
+                arr[i].innerText = temp[i];
+            }
+        }
+        /******************************************
+                回调函数指在函数内执行参数传入的函数     
+        *******************************************/
+        //template
+        document.getElementById('callback').onclick = () => {
+            function A(callback) {
+                callback();
+                console.log("A调用了B函数");
+            }
+            function B() {
+                console.log("我被A执行了");
+            }
+            A(B);
+        }
+        // document.getElementById('callback').onclick = () => {
+        //     alert("请查看控制台");
+        // } 同一事件 旧的会覆盖新的
+
+        /******************************************
+                            闭包     
+        *******************************************/
+        function makepow(n) {
+            return function (x) {
+                return Math.pow(x, n);
+            }
+        }
+        function makeSizer(size) {
+            return function () {
+                document.body.style.fontSize = size + 'px';
+            };
+        }
+        var size12 = makeSizer(12);
+        var size14 = makeSizer(14);
+        var size16 = makeSizer(16);
+        document.getElementById('size-12').onclick = size12;
+        document.getElementById('size-14').onclick = size14;
+        document.getElementById('size-16').onclick = size16;
+
+        /******************************************
+                    用闭包模拟私有方法     
+        *******************************************/
+
+        function buildBank(deposit) {
+            var deposit = deposit || 0;
+            return {
+                drawmoney: (sum) => {
+                    deposit -= sum;
+                },
+                savemoney: (sum) => {
+                    deposit += sum;
+                },
+                balance: function () {
+                    return deposit;
+                }
+            }
+        }
+
+        /******************************************
+                        闭包练习题    
+        *******************************************/
+
+        function fun(n, o) {
+            console.log(o)
+            return {
+                fun: function (m) {
+                    return fun(m, n);
+                }
+            };
+        }
+        //问:三行a,b,c的输出分别是什么？
+        var a = fun(0); a.fun(1); a.fun(2); a.fun(3);//undefined,?,?,?
+        /***********************************
+        a = fun(0) = undefined -> fun(n0,o?)
+        fun(n0.o?).fun(m2,n0)   0
+        fun(n0.o?).fun(m2,n0)   0
+        fun(n0.o?).fun(m3,n0)   0
+        *************************/
+        var b = fun(0).fun(1).fun(2).fun(3);//undefined,?,?,?
+        //fun(n0,o?) -> fun(m1,n0) -> fun(n2,o0) -> fun(m3,o0)
+        var c = fun(0).fun(1); c.fun(2); c.fun(3);//undefined,?,?,?
+        /*****************************
+        c = fun(n0,o?).fun(m1,n0);
+        此时c里面保存着fun(n1,o0) 所以:
+        fun(n1,o0).fun(m2,n0) -> 0
+        fun(n1,o0).fun(m3,n0) -> 0
+        *************************/
+        /******************************************
+                        闭包练习题②    
+        *******************************************/
+        var name = 'global';
+
+        var obj = {
+            name: 'obj',
+            dose: function () {
+                var that = this;
+                this.name = 'dose';
+                return function () {
+                    return that.name;
+                }
+            }
+        }
+
+        alert(obj.dose().call(this))
+        /******************************************
+                        生成预编译函数
+        这一点是借用jquery中的说法，实际上就是通过闭包把外层函数提供的参数保存起来，在闭包运行的时候就可以得到预先指定的参数
+        *******************************************/
+        /*错误写法：
+        var fn = [];
+        for (var i = 0; i < 3; i++) {
+            fn.push(function () {
+                alert(i)
+            })
+        }
+
+        程序执行完 i在外边 window.i = 3;
+        所以无论如何都是alert 3
+        ******************************/
+        var fn = [];
+        for (var i = 0; i < 3; i++) {
+            (function (n) {
+                fn.push(function () {
+                    alert(n)
+                })
+            })(i)
+        }
+        //原理大致就是在外围再制造一个空间
+    </script>
+</body>
+
+</html>

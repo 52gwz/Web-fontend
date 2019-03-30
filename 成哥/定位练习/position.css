@@ -1,0 +1,40 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.left {
+  margin-right: 100px;
+  background-color: black;
+  height: 100px;
+}
+
+.right {
+  position: absolute;
+  right: 0px;
+  background-color: pink;
+  height: 100px;
+  width: 100px;
+}
+
+.box1 {
+  width: 200px;
+  height: 200px;
+  margin-top: 20%;
+  margin-left: 10%;
+  background-color: aqua;
+}
+
+.box2 {
+  width: 50px;
+  height: 50px;
+  margin-left: 40%;
+  margin-top: 40%;
+  /*如何解决margin-top塌陷：
+    主要就是触发BFC 下面有三种方法
+    根据实际需求使用
+    overflow：hidden 隐藏子级溢出父级的内容
+    display: inline-block 改为行级块元素
+    position: absolute 改为绝对定位
+    */
+  background-color: coral;
+}

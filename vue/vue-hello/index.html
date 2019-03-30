@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-test</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="Vue-app">
+        <p v-html="websiteTag"></p>
+        <h1> {{ name }} </h1>
+        <p>{{ sayhello() }}</p>
+        <a v-bind:href="website">open a website</a>
+        <!-- v-bind 绑定属性 -->
+        <div id="mose" @mousemove="change">
+            x:{{ x }} y:{{ y }}
+        </div>
+        <p>
+            <button v-on:click="isReform = !isReform">改革</button>
+            <button v-on:click='isProgress = !isProgress'>发展</button>
+        </p>
+        <span v-bind:class="compClasses">赫鲁晓夫の??</span>
+        <ul>
+            <li v-for="(todo,index) in todos">
+               {{ index }}-{{ todo.text }}
+            </li>
+        </ul>
+        
+        <p>
+            <button v-on:click="show = !show">社会社会</button>
+            <button v-on:click="show2 = !show2">大哥牛逼</button>
+        </p>
+        <span v-if="show">是真滴社会</span>
+        <span v-else-if="show2">是真滴牛逼</span>
+        <!-- show display:none -->
+        <span v-show="show">是真滴社会</span>
+        <span v-show="show2">是真滴牛逼</span>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

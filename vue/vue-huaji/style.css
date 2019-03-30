@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+}
+#mood{
+    height: 20px;
+    width: 200px;
+    margin:0 auto;
+    border:1px solid grey;
+}
+#mood div{
+    height: 20px;
+    width: 198px;
+    margin:0 auto;
+    float: left;
+    background-color: red;
+}
+#control{
+    width: 245px;
+    margin:20px auto;
+}

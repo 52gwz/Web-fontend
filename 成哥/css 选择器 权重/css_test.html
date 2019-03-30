@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <title>css选择器-权重</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <style type="text/css">
+        span {
+            width: 200px;
+            background-color: aquamarine;
+            color: cornflowerblue;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div style="color:chartreuse;background-color:darkblue;width: 240px">这个颜色是行间样式给的╭(╯^╰)╮</div>
+    <span>这个颜色是页面css给的┭┮﹏┭┮</span></br>
+    <span id="qaq">这个颜色被外部css改掉了QAQ</span></br>
+    <em>我大概是被标签选择器选中了吧OvO</em></br>
+    <em contenteditable="false">我tm被属性选择器选了[○･｀Д´･ ○]</em></br>
+    <span style="color:blue" id="boy">我本来是蓝色的，被important给绿了ε=(´ο｀*)))</span>
+</body>

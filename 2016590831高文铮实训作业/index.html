@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="header.css">
+    <script src="jquery-3.2.1.min.js"></script>
+    <title>Gawain's Blog</title>
+</head>
+
+<body>
+    <header>
+        <div id="wrapper">
+            <div id="logo">
+                <img src="profilephoto-1.jpg" width="48px" height="48px">
+                <div class="title-wrap">
+                    <div class="titlecolor-yellow title">{</div>
+                    <div class="titlecolor-green title">Gawain's Blog</div>
+                    <div class="titlecolor-blue title">()</div>
+                    <div class="titlecolor-yellow title">}</div>
+                </div>
+            </div>
+            <audio src="Coldplay - Yellow.mp3" controls="controls">
+            </audio>
+        </div>
+    </header>
+    <div id="content">
+        <div id="left-content">
+            <ul>
+                <a href="https://github.com/">
+                    <li class="Contacts" id="github"></li>
+                </a>
+                <a href="">
+                    <li class="Contacts" id="wechat"></li>
+                </a>
+                <a href="https://space.bilibili.com/13416758?from=search&seid=2204521112486982330">
+                    <li class="Contacts" id="bili"></li>
+                </a>
+                <a href="https://www.apple.com/">
+                    <li class="Contacts" id="apple"></li>
+                </a>
+                <a href="https://www.microsoft.com/">
+                    <li class="Contacts" id="ms"></li>
+                </a>
+                <a href="https://www.linux.org/">
+                    <li class="Contacts" id="linux"></li>
+                </a>
+                <a href="https://www.google.com/">
+                    <li class="Contacts" id="google"></li>
+                </a>
+            </ul>
+        </div>
+        <div id="blog-content">
+            <div id="contents">
+                <div class="content-item it1">
+                    <div style="text-indent: 2em;line-height: 52px;font-size:18px;">学生管理系统 - C语言实训</div>
+                    <div class="it-content">
+                        <div style="text-indent: 2em;line-height: 32px;">对学生信息的增删改查</div>
+                        <div class="it1-img"></div>
+                    </div>
+                </div>
+                <div class="content-item it2">
+                    <div style="text-indent: 2em;line-height: 52px;font-size:18px;">贪吃蛇 - C语言</div>
+                    <div class="it2-img"></div>
+                    <div style="text-indent: 2em;line-height: 52px;font-size:18px;"><a href="https://github.com/52gwz/Retro-Snaker/blob/master/Retro-snaker">跳转GitHub查看源码</a></div>
+                </div>
+                <div class="content-item it3">
+                    <div style="text-indent: 2em;line-height: 52px;font-size:18px;">关于这份作业</div>
+                    <div style="text-indent: 2em;line-height: 32px;">动画和定位有点问题 播放器样式还没有做</div>
+                    <div style="text-indent: 2em;line-height: 32px;">左右两边的logo是可以点击的</div>
+                    <div style="text-indent: 2em;line-height: 32px;">前端写的不是很好 将就着吧 :)</div>
+
+                </div>
+
+                <ul class="pc">
+                    <li class="ls ls1">1</li>
+                    <li class="ls">2</li>
+                    <li class="ls">3</li>
+                    <li class="ls">4</li>
+                    <li class="ls">5</li>
+                    <li class="ls">...</li>
+                </ul>
+
+            </div>
+            <div id="aboutme">
+                <div class="ab-title">Yellow</div>
+                <div>Look at the stars</div>
+                <div>抬头仰望满天繁星</div>
+                <div>Look how they shine for you</div>
+                <div>看它们为你绽放着 闪烁不息</div>
+                <div>And everything you do</div>
+                <div>而你的一颦一举</div>
+                <div>Yeah' they were all Yellow</div>
+                <div>却满含胆怯和羞意</div>
+                <div>I came along</div>
+                <div>我追随着你的气息</div>
+                <div>I wrote a song for you</div>
+                <div>为你写下一首歌曲</div>
+                <div>And all the things you do</div>
+                <div>回想着你的所有举动和笑意</div>
+                <div>it was called Yellow</div>
+                <div>并用Yellow为这首歌命名</div>
+            </div>
+        </div>
+        <div id="right-content">
+            <ul>
+                <a href="https://github.com/">
+                    <li class="Contacts" id="github"></li>
+                </a>
+                <a href="">
+                    <li class="Contacts" id="wechat"></li>
+                </a>
+                <a href="https://space.bilibili.com/13416758?from=search&seid=2204521112486982330">
+                    <li class="Contacts" id="bili"></li>
+                </a>
+                <a href="https://www.apple.com/">
+                    <li class="Contacts" id="apple"></li>
+                </a>
+                <a href="https://www.microsoft.com/">
+                    <li class="Contacts" id="ms"></li>
+                </a>
+                <a href="https://www.linux.org/">
+                    <li class="Contacts" id="linux"></li>
+                </a>
+                <a href="https://www.google.com/">
+                    <li class="Contacts" id="google"></li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div id="footer">
+        <span>Copyright © 2019 Gawain</span><span class="sentence"> Write the code Change the world </span>
+    </div>
+    <script>
+        /* 鼠标特效 */
+        var a_idx = 0;
+        jQuery(document).ready(function ($) {
+            $("body").click(function (e) {
+                var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+                var $i = $("<span />").text(a[a_idx]);
+                a_idx = (a_idx + 1) % a.length;
+                var x = e.pageX,
+                    y = e.pageY;
+                $i.css({
+                    "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                    "top": y - 20,
+                    "left": x,
+                    "position": "absolute",
+                    "font-weight": "bold",
+                    "color": "#ff6651"
+                });
+                $("body").append($i);
+                $i.animate({
+                    "top": y - 180,
+                    "opacity": 0
+                },
+                    1500,
+                    function () {
+                        $i.remove();
+                    });
+            });
+
+            $('.content-item').on('click', function () {
+                if (this.style.height == "80%") {
+                    this.style.height = "24%";
+                    this.style.transition = 'height 0.8s';
+                    $('.content-item').each(function (index, element) {
+                        element.style.display = 'block';
+                        element.style.height = "24%";
+                        element.style.transition = 'height 0.5s';
+                    });
+
+                } else {
+                    $('.content-item').each(function (index, element) {
+                        element.style.display = 'none';
+                    });
+                    this.style.display = "block";
+                    this.style.height = '80%';
+                    this.style.transition = 'height 0.8s';
+                }
+                console.log(this.style.height);
+            });
+
+        });
+    </script>
+</body>
+
+</html>

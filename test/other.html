@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+        <div id="preview" style="border:1px solid black;width:400px;height:200px;background-position: center center;background-repeat: no-repeat;"></div>
+        <input type="file" name="上传图片" id="pic-upload">
+        <p id="info" style="color:crimson;">请上传文件</p>
+    </form>
+    <script>
+        var fileInput = document.getElementById('pic-upload');
+        fileInput.addEventListener('change', function () {
+            
+            preview = document.getElementById('preview');
+            info = document.getElementById('info');
+            //清除图片
+            preview.style.backgroundImage = '';
+            if (!fileInput.value) {
+                info.innerHTML = "没有接收到文件";
+                return;
+            }
+            var file = fileInput.files[0];
+            info.innerHTML = '文件：'+file.name + '</br>' +
+                             '大小：' +file.size + '</br>' +
+                             '修改日期：' +file.lastModifiedDate;
+            var reader = new FileReader();
+            reader.onload = function(e)
+            {
+                var
+                    data = e.target.result;
+                preview.style.backgroundImage = 'url('+data+')';
+            }
+            reader.readAsDataURL(file);
+        });
+    </script>
+</body>
+
+</html>

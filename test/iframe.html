@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <iframe src="https://www.baidu.com" width="450" height="500px"></iframe>
+    <script>
+            function setUserAgent(window, userAgent) {
+                if (window.navigator.userAgent != userAgent) {
+                    var userAgentProp = { get: function () { return userAgent; } };
+                    try {
+                        Object.defineProperty(window.navigator, 'userAgent', userAgentProp);
+                    } catch (e) {
+                        window.navigator = Object.create(navigator, {
+                            userAgent: userAgentProp
+                        });
+                    }
+                }
+            }
+            setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Mobile Safari/537.36');
+        </script>
+</body>
+
+</html>

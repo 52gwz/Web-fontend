@@ -1,0 +1,128 @@
+.header {
+  background-color: #c62f2f;
+  height: 58px;
+  width: 100%;
+}
+
+.header .logo {
+  float: left;
+  width: 132px;
+  margin: 0 15px 0 20px;
+  height: 100%;
+  /*132 20 22 22*/
+  background: url("img/logo.png") 0 18px no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.keyward {
+  float: left;
+  margin: 18px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.188);
+  height: 20px;
+  width: 49px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.backward {
+  float: left;
+  width: 23px;
+  height: 100%;
+}
+
+.keyward .line {
+  float: left;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.188);
+}
+
+.forward {
+  float: left;
+  width: 23px;
+  height: 100%;
+  /* border-top: 2px solid;
+    border-right: 2px solid; */
+  /* width: 6px; */
+  /* height: 6px; */
+  /* border-color: rgba(233, 233, 233, 0.233); */
+  /* transform: rotate(45deg); */
+}
+
+.arrow {
+  height: 6px;
+  width: 6px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  margin: 6px auto;
+  border-color: rgba(233, 233, 233, 0.233);
+}
+
+.left-arrow {
+  transform: rotate(-135deg);
+}
+
+.right-arrow {
+  border-color: #fff;
+  transform: rotate(45deg);
+}
+
+.header .search {
+  float: left;
+  width: 220px;
+  margin: 18px 10px;
+  height: 22px;
+  border-radius: 25px;
+  background-color: #a82828;
+}
+
+.header .searchbar {
+  float: left;
+  color: #fff;
+  height: 22px;
+  width: 180px;
+  padding-left: 10px;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
+.header button {
+  float: left;
+  height: 22px;
+  width: 30px;
+  background-color: transparent;
+  border-radius: 0 20px 20px 0;
+  background: url("img/searchbutton.png") no-repeat;
+  background-size: 40%;
+  background-position: 8px 4px;
+  filter: opacity(0.4);
+  outline: none;
+  border: none;
+}
+
+.header button:hover {
+  filter: opacity(1);
+}
+
+.header .profilephoto {
+  float: left;
+  margin-left: 280px;
+  margin-top: 12px;
+  background-image: url(img/pp1.png);
+  background-size: 100%;
+  border-radius: 50px;
+  height: 34px;
+  cursor: pointer;
+  width: 34px;
+}
+.user-info {
+  float: left;
+  color: #fff;
+  font-size: 14px;
+}
+
+.user-info .name {
+  margin: 20px 4px 0 8px;
+}

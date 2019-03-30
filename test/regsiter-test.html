@@ -1,0 +1,63 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆练习</title>
+</head>
+
+<body>
+    <form id="test-register" onsubmit="return checkForm()">
+        <p>
+            账号：<input type="text" id="username" name="username">
+        </p>
+        <p>
+            密码：<input type="password" id="password" name="password">
+        </p>
+        <p>
+            重复密码：<input type="password" id="password-2">
+        </p>
+        <p id="text-erro"></p>
+        <button type="submit" style="position: relative;left:50px;width: 100px;">注册</button>
+    </form>
+    <script>
+        /*
+            用户名必须是3-10位英文字母或数字；
+            口令必须是6-20位；
+            两次输入口令必须一致。
+        */
+
+        function checkForm() {
+            var ruler1 = /^[a-zA-Z][0-9a-zA-Z]{3,10}$/;
+                ruler2 = /^[^ ]{6,20}$/;
+                username = document.getElementById('username').value;
+                password = document.getElementById('password').value;
+                error = document.getElementById('text-erro');
+            if (!(ruler1.test(username))) {
+                error.innerHTML = "用户名必须字母开头的3-10位";
+                return false;
+            }
+            if(!(ruler2.test(password)))
+            {
+                error.innerHTML = "密码是不包含空格的6-20位";
+                return false;
+            }
+            if(!(password==document.getElementById('password-2').value))
+            {
+                error.innerHTML = "两次密码必须相同";
+                return false;
+            }
+            return true;
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

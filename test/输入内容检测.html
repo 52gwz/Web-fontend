@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hopeful - place</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>请输入手机号</h1>
+    <input id="test" type="text">
+    <button type="button" onclick="login()">登陆</button>
+    <!-- <ul>
+        <li>fff</li>
+        <li>fff</li>
+        <li>fff</li>
+    </ul> -->
+    <span id="mess">测试</span>
+    <script>
+        //         语法
+        // try
+        //   {
+        //   //在这里运行代码
+        //   }
+        // catch(err)
+        //   {
+        //   //在这里处理错误
+        //   }
+        // var text = ""; 
+        // function message() {
+        //     try {
+        //         fckalret("hello");
+        //     }
+        //     catch (err) {
+        //         text = "怎么回事小老弟\n";
+        //         text += "错误描述：" + err.message;
+        //         text += "\n点击确认重新连接\n";
+        //         alert(text);
+        //     }
+        // }
+        function login() {
+
+            try {
+                var number = document.getElementById("test").value;
+                if (number != 123) {
+                    throw ("手机号错误！");
+                }
+            } catch (err) {
+                var y = document.getElementById("mess");
+                alert(err);
+                y.innerHTML = err;
+            }
+        }
+        function test()
+        {
+            for(var i = 1;i<9;i++)
+            {
+                document.write(i);
+            }
+        }
+        test();
+    </script>
+</body>
+
+</html>
